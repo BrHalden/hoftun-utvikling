@@ -1,11 +1,10 @@
 import React from 'react';
-import '../App.css';
 import Layout from './layout/Layout';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from "react-bootstrap/Container";
 
 function App() {
-  return /*#__PURE__*/React.createElement("div", {
-    className: "App"
-  }, /*#__PURE__*/React.createElement("p", null, "Hello from App"), /*#__PURE__*/React.createElement(Layout, null));
+  return /*#__PURE__*/React.createElement(Layout, null);
 }
 
 export default App;
