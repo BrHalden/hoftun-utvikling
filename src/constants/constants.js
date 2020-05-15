@@ -1,4 +1,5 @@
 export var iconSizeMin = '30px';
+export const URI = 'mongodb+srv://test-user:9502142q24jb8nA@cabins-oytl7.mongodb.net/test?retryWrites=true&w=majority'
 
 export const contactPage = {
     contactInfo: {
