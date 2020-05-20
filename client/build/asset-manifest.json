@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a30355e7.chunk.css",
+    "main.js": "/static/js/main.8c8335a3.chunk.js",
+    "main.js.map": "/static/js/main.8c8335a3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d46a7d48.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d46a7d48.js.map",
+    "static/css/2.69121389.chunk.css": "/static/css/2.69121389.chunk.css",
+    "static/js/2.80941514.chunk.js": "/static/js/2.80941514.chunk.js",
+    "static/js/2.80941514.chunk.js.map": "/static/js/2.80941514.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.4d2ff37ca322ede718837e815d262603.js": "/precache-manifest.4d2ff37ca322ede718837e815d262603.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.69121389.chunk.css.map": "/static/css/2.69121389.chunk.css.map",
+    "static/css/main.a30355e7.chunk.css.map": "/static/css/main.a30355e7.chunk.css.map",
+    "static/js/2.80941514.chunk.js.LICENSE.txt": "/static/js/2.80941514.chunk.js.LICENSE.txt",
+    "static/media/hjem_head1.jpg": "/static/media/hjem_head1.278c9652.jpg",
+    "static/media/home-banner.svg": "/static/media/home-banner.2c00eb70.svg",
+    "static/media/list-icon.svg": "/static/media/list-icon.7c60497f.svg",
+    "static/media/login-icon.svg": "/static/media/login-icon.9ea480c0.svg",
+    "static/media/profile-icon.svg": "/static/media/profile-icon.87b2366d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d46a7d48.js",
+    "static/css/2.69121389.chunk.css",
+    "static/js/2.80941514.chunk.js",
+    "static/css/main.a30355e7.chunk.css",
+    "static/js/main.8c8335a3.chunk.js"
+  ]
+}
