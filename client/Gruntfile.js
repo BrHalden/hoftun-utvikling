@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         cssmin: {
 			minify: {
 				src: 'dist/css/master.css',
-				dest: 'dist/css/master.min.css'
+				dest: 'dist/css/master.css.min'
 			}
         },
         babel: {
@@ -49,5 +49,4 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-sass");
     grunt.registerTask("default", ["watch", "sass", "concat", "cssmin"]);
-
 };

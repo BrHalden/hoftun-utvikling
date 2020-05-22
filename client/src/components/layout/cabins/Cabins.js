@@ -6,8 +6,6 @@ export default function Cabins (props) {
     return (
         <>
             <Nav />
-            <p>Hello from Cabins</p>
-            
             <ListCabins />
         </>
     )   

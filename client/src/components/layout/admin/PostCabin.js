@@ -3,26 +3,9 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
-import Button from '../../Button'
+import Button from '../../Button';
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
-
-/*function newCabin() {
-    const options = {
-      method: 'POST',
-      headers : {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(contactPage)
-      
-    }
-    fetch('/cabins', options)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      })
-};*/
-
 
 const cabinSchema = yup.object().shape({
     name: yup.string().required(),

@@ -3,13 +3,13 @@ import {Link} from "react-router-dom";
 import listIcon from '../images/icons/list-icon.svg';
 import ProfileIcon from '../images/icons/profile-icon.svg';
 import loginIcon from '../images/icons/login-icon.svg';
-import {iconSizeMin} from '../constants/constants';
+import navBg from '../images/nav-bg.svg';
 
 export default function Nav(props) {
     return (
-        <div className='nav'>
+        <div className='nav' style={{backgroundImage: `url(${navBg})`}}>
             <Link to='/' className='nav__brand'>
-                Hoftun Utvikling
+                <span className='nav__brand'>Hoftun Utvikling</span>
             </Link>
             <Link to='/Cabins'>
                 <img 
