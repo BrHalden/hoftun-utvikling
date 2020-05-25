@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import $ from 'jquery';
 import ImgCarousel from './ImgCarousel';
 import DisplayInfo from './DisplayInfo';
 import CabNav from './CabNav';
@@ -8,6 +9,7 @@ import CabNav from './CabNav';
 
 export default function ListCabins (props) {
     let counter = 0;
+    const [currentCabin, setCurrentCabin] = useState(0);
     const [cabins, setCabins] = useState([]);
     useEffect(() => {
         fetch('/cabins')
@@ -17,6 +19,7 @@ export default function ListCabins (props) {
             })
             .catch(error => console.log(error)); 
     }, []);
+
     return (
         <div>
             {
@@ -31,7 +34,6 @@ export default function ListCabins (props) {
                         img1, img2, img3, images,
                         createdOn
                     } = cabin;
-                    
                     return (
                         <div key={id} id={'cabin' + counter}>
                             <Row>
