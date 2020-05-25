@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ImgCarousel from './ImgCarousel';
 import DisplayInfo from './DisplayInfo';
+import CabNav from './CabNav';
 
 
 export default function ListCabins (props) {
@@ -32,9 +33,11 @@ export default function ListCabins (props) {
                     } = cabin;
                     
                     return (
-                        <div key={id} id={'cabin-' + counter}>
+                        <div key={id} id={'cabin' + counter}>
                             <Row>
-                                <ImgCarousel images={images}/>
+                                <ImgCarousel images={images}>
+                                    <CabNav />
+                                </ImgCarousel>
                                 <DisplayInfo 
                                     name={name} description={description} id={id}
                                     totalPrice={totalPrice} askingPrice={askingPrice} expenses={expenses}

@@ -1,22 +1,46 @@
-import React from 'react'
+import React, {useState} from 'react';
 import Col from 'react-bootstrap/Col';
-import $ from 'jquery';
 import ImgNav from './ImgNav';
-import CabNav from './CabNav';
+import arrowRight from '../../../images/icons/arrow-right.svg';
+import arrowLeft from '../../../images/icons/arrow-left.svg';
 
 
 export default function ImgCarousel (props) {
-    console.log(props.images)
-    console.log($('#cabin-1'));
-    $('#cabin-1').addClass('background-red');
-    let cabin = document.getElementById('cabin-1')
-    cabin.setAttribute('class', 'backround-red')
-
+    const [cabinImg, setCabinImg] = useState(0);
+    const [imageIndex, setImageIndex] = useState(0);
+    function resetIndex () {
+        
+    }
+    
+    function nextImage () {
+        if (props.images.length - 1 === cabinImg) {
+            setCabinImg(cabinImg - cabinImg);
+        }
+         else {
+            setCabinImg(cabinImg + 1);
+        }
+        
+    }
+    function prevImage () {
+        if (cabinImg === 0 ) {
+            setCabinImg(props.images.length - 1);
+        } else {
+            setCabinImg(cabinImg - 1);
+        }
+    }
+        //sett inn imgNav i  return 
     return (
         <Col lg='8' md='8'>
-            <img src={props.images[0]} width='100%' />
-            <ImgNav />
-            <CabNav />
+            <img src={props.images[cabinImg]} width='100%' />
+            <div className='imgNav'>
+                <span>
+                    <div onClick={() => {nextImage()}} className='imgNav__button' style={{backgroundImage: `url(${arrowRight})`}}></div>
+                </span>
+                <span>
+                    <div onClick={() => {prevImage()}} className='imgNav__button' style={{backgroundImage: `url(${arrowLeft})`}}></div>
+                </span>
+            </div>
+            {console.log(cabinImg)}
         </Col>
     )
 }
