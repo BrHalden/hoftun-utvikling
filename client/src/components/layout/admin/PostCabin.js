@@ -17,9 +17,9 @@ const cabinSchema = yup.object().shape({
     primaryRoomArea: yup.number(),
     grossArea: yup.number(),
     aditionalInfo: yup.string(),
-    img1: yup.string().url(),
-    img2: yup.string().url(),
-    img3: yup.string().url(),
+    images: yup.array()
+        .compact()
+        .cast(['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11', 'img12', 'img13', 'img14']),
     createdOn: yup.date().default(function(){
         return new Date();
     })
@@ -102,7 +102,7 @@ export default function PostCabin (props) {
                             </Col>
                             <Col>
                                 <Form.Group className='contact-form__item'>
-                                    <Form.Control name='img3' type='url' placeholder='Bilde URL' ref={register({ required: true })}/>
+                                    <Form.Control className='' name='img3' type='url' placeholder='Bilde URL' ref={register({ required: true })}/>
                                 </Form.Group>
                             </Col>
                         <Form.Group className='contact-form__item contact-form__item--submit'>

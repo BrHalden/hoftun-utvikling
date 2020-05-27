@@ -3,7 +3,52 @@
         font-weight: 600
     &__more-info
         column-count: 2
-.imgNav
-    &__button
-        width: 20px
-        height: 20px
+
+.cabin
+    height: 100%
+    position: relative
+    &__container    
+        height: 100%
+        &--hidden
+            display: none
+    &__image-container
+        height: 100%
+        width: 100%
+    &__image
+        object-fit: cover
+        object-position: center
+        height: 100vh
+        width: 100%
+
+    &__info-container
+        height: 100%
+    &__nav-button
+        width: 22px
+        height: 22px
+    &__nav-button-container
+        position: relative
+        text-align: center
+        heigth: 100%
+        &--image
+            //somthing
+        &--cabin
+            //somthing
+    &__cab-nav, &__img-nav
+        background-color: white
+        position: absolute
+    &__cab-nav
+        right: 10px 
+        top: 50%
+        border-radius: 2px 0 0 2px 
+    &__img-nav
+        bottom: 0
+        left: 50%
+        border-radius: 2px 2px 0 0 
+    &__img-nav-button
+        display: inline-block
+    &__row
+        height: 100%
+    &__col
+        height: 100%
+    &__img-nav > span > div
+        display: inline-block

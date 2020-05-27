@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Button from '../../Button'
 
 export default function DisplayInfo (props) {
-    console.log(props.name)
     return (
         <Col className='info' lg='4' md='4'>
             <h1>{props.name}</h1>
