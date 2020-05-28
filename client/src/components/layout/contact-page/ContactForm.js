@@ -3,8 +3,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from "react-bootstrap/Form";
 import Button from '../../Button';
-import emailjs from 'emailjs-com';
 import * as yup from "yup";
+import $ from 'jquery';
 import { useForm } from "react-hook-form";
 
 const contactSchema = yup.object().shape({
@@ -29,6 +29,9 @@ export default function ContactFrom (props) {
             .then(res => {
             console.log(res);
         })
+        console.log(mail.value)
+        $('.contact-form__input').val('');
+        $('.contact-form__accepted').removeClass('contact-form__hidden');
     }
     const { register, handleSubmit, errors } = useForm({
         validationSchema: contactSchema
@@ -44,28 +47,29 @@ export default function ContactFrom (props) {
                     <Col>
                         <Form.Group className='contact-form__item'>
                             <Form.Label>Navn</Form.Label>
-                            <Form.Control name='name' type='text' placeholder='' ref={register()}/>
+                            <Form.Control name='name' type='text' placeholder='' className='contact-form__input' ref={register()}/>
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className='contact-form__item'>
                             <Form.Label>E-Post<span className='contact-form__required'> *</span></Form.Label>
-                            <Form.Control name='email' type='email' placeholder='' ref={register({ required: true })}/>
+                            <Form.Control name='email' type='email' placeholder='' className='contact-form__input' ref={register({ required: true })}/>
                             {errors.email && <p className="contact-form__error">Legg ved en Epost for å komme i kontakt</p>}
                         </Form.Group>
                     </Col>
                 </Row>
                 <Form.Group className='contact-form__item'>
                     <Form.Label>Emne<span className='contact-form__required'> *</span></Form.Label>
-                    <Form.Control size='lg' name='subject' type='text' placeholder='' ref={register({ required: true })}/>
+                    <Form.Control size='lg' name='subject' type='text' placeholder='' className='contact-form__input' ref={register({ required: true })}/>
                     {errors.subject && <p className="contact-form__error">Trenger ett emne for å sende meldingen</p>}
                 </Form.Group>
                 <Form.Group className='contact-form__item'>
                     <Form.Label>Melding<span className='contact-form__required'> *</span></Form.Label>
-                    <Form.Control size='sm' rows='3' as='textarea' name='text' type='text' placeholder='' ref={register({ required: true })}/>
+                    <Form.Control size='sm' rows='3' as='textarea' name='text' type='text' placeholder='' className='contact-form__input' ref={register({ required: true })}/>
                     {errors.message && <p className="contact-form__error">Meldingen må være minst 10 tegn lang</p>}
                 </Form.Group>
                 <Form.Group className='contact-form__item contact-form__item--submit'>
+                    <p className="contact-form__hidden contact-form__accepted">Meldingen ble sendt</p>
                     <Button type='submit' value='Send'>
                         <span>Send Melding</span>
                     </Button>
