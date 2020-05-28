@@ -54,13 +54,6 @@ app.post('/cabins', (request, response) => {
     })
 })
 
-
-server.listen(PORT, err => {
-    if (err) throw err
-
-    console.log('App is listening on port ' + PORT);
-})
-
 // Mail
 
 app.post('/mail', (request, response) => {
@@ -73,4 +66,10 @@ app.post('/mail', (request, response) => {
             response.json({status: 'message sent: ', data})
         }
     })
+})
+
+server.listen(PORT, err => {
+    if (err) throw err
+
+    console.log('App is listening on port ' + PORT);
 })
