@@ -61,7 +61,7 @@ app.post('/mail', (request, response) => {
     const {name, email, subject, text} = request.body
     sendMail(name, email, subject, text, function(err, data){
         if(err) {
-            response.json({status: 'error', err})
+            response.status(500).json({status: 'error', err})
         } else {
             response.json({status: 'message sent: ', data})
         }
