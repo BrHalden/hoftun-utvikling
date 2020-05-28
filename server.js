@@ -5,6 +5,7 @@ const DataStore = require('nedb');
 const {createServer} = require('http');
 const compression = require('compression');
 const morgan = require('morgan');
+const sendMail = require('./mail')
 
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000);
@@ -24,6 +25,9 @@ const server = createServer(app)
 
 // Cabin Post, Recieve and Store
 app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.urlencoded({ 
+    extended: false
+ }))
 app.use(express.json())
 
 const database = new DataStore('cabins.db');
@@ -55,4 +59,18 @@ server.listen(PORT, err => {
     if (err) throw err
 
     console.log('App is listening on port ' + PORT);
+})
+
+// Mail
+
+app.post('/mail', (request, response) => {
+    console.log(request.body);
+    const {name, email, subject, text} = request.body
+    sendMail(name, email, subject, text, function(err, data){
+        if(err) {
+            response.json({status: 'error', err})
+        } else {
+            response.json({status: 'message sent: ', data})
+        }
+    })
 })

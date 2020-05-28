@@ -9,7 +9,7 @@ export default function Nav(props) {
     return (
         <div className='nav' style={{backgroundImage: `url(${navBg})`}}>
             <Link to='/' className='nav__brand'>
-                <span className='nav__brand'>Hoftun Utvikling</span>
+                <span className='nav__brand'>hoftun utvikling</span>
             </Link>
             <Link to='/Cabins'>
                 <img 

@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "cra-template": "1.0.3",
+    "emailjs-com": "^2.4.1",
     "express": "^4.17.1",
     "grunt": "^1.1.0",
     "grunt-babel": "^8.0.0",
