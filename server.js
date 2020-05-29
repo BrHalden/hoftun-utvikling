@@ -10,6 +10,9 @@ const sendMail = require('./mail')
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000);
 
+// Redirects
+
+
 // Deploy
 
 const dev = app.get('env') !== 'production'
