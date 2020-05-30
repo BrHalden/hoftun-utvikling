@@ -39,7 +39,7 @@ export default function PostCabin (props) {
             },
             body: JSON.stringify(data)   
         }
-        fetch('/cabins', options)
+        fetch('/api/cabins', options)
             .then(response => response.json())
             .then(res => {
             console.log(res);

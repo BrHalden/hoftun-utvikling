@@ -36,7 +36,7 @@ app.use(express.json())
 const database = new DataStore('cabins.db');
 database.loadDatabase();
 
-app.get('/cabins', (request, response) => {
+app.get('/api/cabins', (request, response) => {
     database.find({}, (error, cabins) => {
         if (error) {
             console.log(err);
@@ -47,7 +47,15 @@ app.get('/cabins', (request, response) => {
     })
 })
 
-app.post('/cabins', (request, response) => {
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build/index.html'), function(err) {
+      if (err) {
+        res.status(500).send(err)
+      }
+    })
+  })
+
+app.post('/api/cabins', (request, response) => {
     console.log(request.body);
     database.insert(request.body);
     console.log(database);
@@ -59,7 +67,7 @@ app.post('/cabins', (request, response) => {
 
 // Mail
 
-app.post('/mail', (request, response) => {
+app.post('/api/mail', (request, response) => {
     console.log(request.body);
     const {name, email, subject, text} = request.body
     sendMail(name, email, subject, text, function(err, data){

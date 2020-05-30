@@ -30,11 +30,13 @@ export default function DisplayInfo (props) {
                 </Col>
             </Row>
             <p className='info__more-info'>{props.aditionalInfo}</p>
-            <Button>
-                <Link to='/ContactPage'>
-                    <span>Ta Kontakt</span>
-                </Link>
-            </Button>
+            <div className='info__button-container'>
+                <Button>
+                    <Link to='/ContactPage'>
+                        <span>Ta Kontakt</span>
+                    </Link>
+                </Button>
+            </div>
         </Col>
     )
 }

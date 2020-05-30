@@ -16,7 +16,7 @@ export default function ListCabins (props) {
     const [currentCabin, setCurrentCabin] = useState(0);
     const [cabins, setCabins] = useState([]);
     useEffect(() => {
-        fetch('/cabins')
+        fetch('/api/cabins')
             .then(response => response.json())
             .then(json => {
                 setCabins(json);

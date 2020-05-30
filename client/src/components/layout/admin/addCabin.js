@@ -7,7 +7,7 @@ export default function addCabin(info) {
             },
             body: JSON.stringify(info)   
         }
-        fetch('/cabins', options)
+        fetch('/api/cabins', options)
             .then(response => response.json())
             .then(res => {
             console.log(res);
