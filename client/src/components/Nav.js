@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import listIcon from '../images/icons/list-icon.svg';
 import ProfileIcon from '../images/icons/profile-icon.svg';
+import aboutIcon from '../images/icons/about-icon.svg';
 import loginIcon from '../images/icons/login-icon.svg';
 import navBg from '../images/nav-bg.svg';
 
@@ -12,25 +13,16 @@ export default function Nav(props) {
                 <span className='nav__brand'>hoftun utvikling</span>
             </Link>
             <Link to='/Cabins'>
-                <img 
-                    src={listIcon}
-                    className='nav__icon'
-                    alt='List icon'
-                />
+                <div className='nav__icon nav__icon--list'></div>
             </Link>
             <Link to='/ContactPage'>
-                <img 
-                    src={ProfileIcon} 
-                    className='nav__icon' 
-                    alt='Profile icon' 
-                />
+                <div className='nav__icon nav__icon--contact'></div>
+            </Link>
+            <Link to='/About'>
+                <div className='nav__icon nav__icon--about'></div>
             </Link>
             <Link to='/Login'>
-                <img 
-                    src={loginIcon} 
-                    className='nav__icon' 
-                    alt='Login icon' 
-                />
+                <div className='nav__icon nav__icon--login'></div>
             </Link>
         </div>
     )

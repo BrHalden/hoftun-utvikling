@@ -4,6 +4,8 @@
 @import 'button'
 @import 'contact'
 @import 'cabins'
+@import 'admin'
+@import 'about'
 
     
 html, body, #root
@@ -11,14 +13,15 @@ html, body, #root
 
 body
   min-height: 100%
-  overflow-x: hidden
+  overflow-x: none
 
 h1, h2, h3, h4, h5, p, span
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
 
 p 
-  font-family: $main-font     
+  font-family: $main-font
+  font-size: 14px  
 
 h3, h4, h5
   font-family: $highlight-font
@@ -29,7 +32,8 @@ h1
 
 h2
   font-family: $header-font-2
-
+h3 
+  font-size: 35px
 
 // Test
 .background-red

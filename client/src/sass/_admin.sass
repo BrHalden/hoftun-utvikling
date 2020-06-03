@@ -1,0 +1,55 @@
+
+.admin
+    &__nav
+        margin-bottom: 40px
+        text-align: center
+    & .col
+        padding: 0
+        margin: 0
+    &__nav-button
+        color: #ffffff
+        padding: 10px 0 5px 0
+        background-color: $main-color
+        text-decoration: none
+        &:hover
+            background-color: $button-hover-color
+        &:active
+            background-color: $button-active-color
+        & p 
+            margin-bottom: 0
+            font-weight: 300
+            font-size: 16px
+.add-cabin
+    &__header
+        margin-bottom: 20px
+    &__item
+        width: 100%
+        & > input, textarea
+            width: 100%
+        &--submit
+            text-align: center
+            & > *
+                font-family: $highlight-font
+                font-size: 20px
+                font-weight: 600
+                color: #fff
+                -moz-osx-font-smoothing: grayscale
+                -webkit-font-smoothing: antialiased
+    &__error 
+        color: $red
+    &__required
+        color: $red
+    &__hidden
+        visibility: hidden
+    &__accepted
+        color: $green
+        font-family: $main-font
+        font-weight: 400
+        font-size: 16px
+    &__number-input
+        margin: 0
+        padding: 0
+        &--pricing
+            padding: 0 20px 0 0
+        &--measures
+            padding: 0 0 0 20px

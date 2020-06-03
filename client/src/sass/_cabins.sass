@@ -1,17 +1,41 @@
 .info
+    padding-left: 30px
+    padding-right: 30px
+    &__header
+        margin-top: 20px
+        margin-bottom: 10px
+    &__intro
+        font-weight: 600
+        font-size: 16px
+        margin-bottom: 40px
     &__sub-header
         font-weight: 600
+        margin-bottom: 0
+    &__text-header
+        margin-bottom: 10px
+    &__text-container 
+        margin-top: 30px
+        margin-bottom: 30px
     &__more-info
         column-count: 2
     &__button-container
         text-align: center
         margin-rigth: 10%
+//    &__value-section
+    &__value-container
+        border: 0px
+        margin-right: 0
+        margin-left: 0
+        max-width: 100%
+
 
 .cabin
     height: 100%
-    position: relative
+    overflow-y: hidden
     &__container    
         height: 100%
+        width: 100%
+        padding: 0
         &--hidden
             display: none
     &__image-container
@@ -26,8 +50,8 @@
     &__info-container
         height: 100%
     &__nav-button
-        width: 22px
-        height: 22px
+        width: 23px
+        height: 23px
     &__nav-button-container
         position: relative
         text-align: center
@@ -37,10 +61,10 @@
         &--cabin
             //somthing
     &__cab-nav, &__img-nav
-        background-color: white
+        background-color: rgba(255, 255, 255, 0.7)
         position: absolute
     &__cab-nav
-        right: 10px 
+        right: 0 
         top: 50%
         border-radius: 2px 0 0 2px 
     &__img-nav
@@ -50,8 +74,9 @@
     &__img-nav-button
         display: inline-block
     &__row
-        height: 100%
+        max-width: 100%
     &__col
         height: 100%
+        padding-right: 0
     &__img-nav > span > div
         display: inline-block

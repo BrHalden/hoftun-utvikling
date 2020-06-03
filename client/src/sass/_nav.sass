@@ -5,11 +5,29 @@
     background-repeat: no-repeat
     position: absolute
     padding: 5px 0 15px 0
-    border-radius: 0 0 3px 0
+    border-radius: 0 0 2px 0
+    top: 0
     &__icon
         height: $icon-size
         width: $icon-size
         margin-right: 15px
+        &--list
+            background-image: url('../images/icons/list-icon.svg')
+            &:hover
+                background-image: url('../images/icons/list-icon-blue.svg')
+        &--about
+            background-image: url('../images/icons/about-icon.svg')
+            &:hover
+                background-image: url('../images/icons/about-icon-blue.svg')
+        &--contact
+            background-image: url('../images/icons/profile-icon.svg')
+            &:hover
+                background-image: url('../images/icons/profile-icon-blue.svg')
+        &--login
+            background-image: url('../images/icons/login-icon.svg')
+            &:hover
+                background-image: url('../images/icons/login-icon-blue.svg')
+            
     &__brand
         margin-right: 20px
         font-family: $header-font-2

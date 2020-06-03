@@ -17,11 +17,11 @@ export const contactPage = {
 }
 export const pageTransition = {
     in: {
-        y: 0,
-        opacity: 1
+        opacity: 1,
+        y: 0
     },
     out: {
-        y: '100vh',
-        opacity: 0
+        opacity: 0,
+        y: '100vh'
     }
 }
