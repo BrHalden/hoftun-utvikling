@@ -46,26 +46,22 @@ export default function ContactFrom (props) {
                 <Row>
                     <Col>
                         <Form.Group className='contact-form__item'>
-                            <Form.Label>Navn</Form.Label>
-                            <Form.Control name='name' type='text' placeholder='' className='contact-form__input' ref={register()}/>
+                            <Form.Control size='sm' name='name' type='text' placeholder='Navn' className='contact-form__input' ref={register()}/>
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className='contact-form__item'>
-                            <Form.Label>E-Post<span className='contact-form__required'> *</span></Form.Label>
-                            <Form.Control name='email' type='email' placeholder='' className='contact-form__input' ref={register({ required: true })}/>
+                            <Form.Control size='sm' name='email' type='email' placeholder='Epost *' className='contact-form__input' ref={register({ required: true })}/>
                             {errors.email && <p className="contact-form__error">Legg ved en Epost for å komme i kontakt</p>}
                         </Form.Group>
                     </Col>
                 </Row>
                 <Form.Group className='contact-form__item'>
-                    <Form.Label>Emne<span className='contact-form__required'> *</span></Form.Label>
-                    <Form.Control size='lg' name='subject' type='text' placeholder='' className='contact-form__input' ref={register({ required: true })}/>
+                    <Form.Control size='sm' name='subject' type='text' placeholder='Emne *' className='contact-form__input' ref={register({ required: true })}/>
                     {errors.subject && <p className="contact-form__error">Trenger ett emne for å sende meldingen</p>}
                 </Form.Group>
                 <Form.Group className='contact-form__item'>
-                    <Form.Label>Melding<span className='contact-form__required'> *</span></Form.Label>
-                    <Form.Control size='sm' rows='3' as='textarea' name='text' type='text' placeholder='' className='contact-form__input' ref={register({ required: true })}/>
+                    <Form.Control size='sm' rows='3' as='textarea' name='text' type='text' placeholder='Melding *' className='contact-form__input' ref={register({ required: true })}/>
                     {errors.message && <p className="contact-form__error">Meldingen må være minst 10 tegn lang</p>}
                 </Form.Group>
                 <Form.Group className='contact-form__item contact-form__item--submit'>

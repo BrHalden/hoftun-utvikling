@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import Button from '../Button'
 import Img from '../../images/org-size/hjem_head1.jpg';
 import homeBanner from '../../images/home-banner.svg';
-import {pageTransition} from '../../constants/constants';
+import { pageVariants, pageTransition } from '../../constants/constants';
 
 export default function Home (props) {
     return (
-        <motion.div initial='out' animate='in' exit='out' variant={pageTransition} transition={{ duration: 4 }} className='home' style={{backgroundImage: `url(${Img})`}}>
+        <motion.div initial='initial' animate='in' exit='out' variants={pageVariants} transition={pageTransition} className='home animation__container' style={{backgroundImage: `url(${Img})`}}>
             <div className='home__content' style={{backgroundImage: `url(${homeBanner})`}}>
                 <h1 className='home__header'>hoftun utvikling</h1>
                 <Button className='home__button'>

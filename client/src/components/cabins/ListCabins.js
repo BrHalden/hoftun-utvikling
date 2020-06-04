@@ -8,9 +8,19 @@ import DisplayInfo from './DisplayInfo';
 
 import arrowDown from '../../images/icons/arrow-down.svg';
 import arrowUp from '../../images/icons/arrow-up.svg';
+import cabinIcon from  '../../images/icons/cabin-icon-blue.svg';
 
 
 export default function ListCabins (props) {
+    var fired = false;
+    $(document).bind('keydown', function(event) {
+        if (event.which === 38) {
+            prevCabin()
+            console.log(currentCabin + ' from switchCabin, from: ' + event.key)
+        } else if (event.which === 40) {
+            nextCabin()
+        }
+    });
     let counter = 0;
     let cabinList = [];
     const [currentCabin, setCurrentCabin] = useState(0);
@@ -23,15 +33,14 @@ export default function ListCabins (props) {
             })
             .catch(error => console.log(error));
     }, []);
-
     function nextCabin () {
         if (currentCabin === cabins.length - 1) {
             $('.cabin__container--current').addClass('cabin__container--hidden').removeClass('cabin__container--current');
             $('.cabin__container--hidden').first().addClass('cabin__container--current').removeClass('cabin__container--hidden');
             setCurrentCabin(currentCabin - currentCabin);
         } else {
-            setCurrentCabin(currentCabin + 1)
             $('.cabin__container--current').next().addClass('cabin__container--current').removeClass('cabin__container--hidden').prev().removeClass('cabin__container--current').addClass('cabin__container--hidden');
+            setCurrentCabin(currentCabin + 1)
             console.log(currentCabin);
         }
     }
@@ -44,6 +53,9 @@ export default function ListCabins (props) {
             $('.cabin__container--current').prev().addClass('cabin__container--current').removeClass('cabin__container--hidden').next().removeClass('cabin__container--current').addClass('cabin__container--hidden');
             setCurrentCabin(currentCabin - 1)
         }
+    }
+    function switchCabin (event) {
+        
     }
     return (
         <div className='cabin'>
@@ -68,10 +80,12 @@ export default function ListCabins (props) {
                                     <ImgCarousel images={images} className='cabin__image-container'>
                                         <div className='cabin__cab-nav cabin__nav-button-container cabin__nav-button-container--cabin'>
                                             <span>
-                                                <div onClick={() => {prevCabin()}} className='cabin__nav-button' style={{backgroundImage: `url(${arrowUp})`}}></div>
+                                                <div onClick={() => {prevCabin()}} className='cabin__nav-button cabin__cab-nav-button cabin__cab-nav-button--prev'></div>
                                             </span>
+                                            <div onClick={() => {nextCabin()}} style={{backgroundImage: `url(${cabinIcon})`}} className='cabin__nav-icon'></div>
+                                            <div className='cabin__nav-counter cabin__nav-counter--cab'>{counter}/3</div>
                                              <span>
-                                                <div onClick={() => {nextCabin()}} className='cabin__nav-button' style={{backgroundImage: `url(${arrowDown})`}}></div>
+                                                <div onClick={() => {nextCabin()}} className='cabin__nav-button cabin__cab-nav-button cabin__cab-nav-button--next'></div>
                                             </span>
                                             
                                         </div>
@@ -95,10 +109,12 @@ export default function ListCabins (props) {
                                     <ImgCarousel images={images}>
                                         <div className='cabin__cab-nav'>
                                             <span>
-                                                <div onClick={() => {prevCabin()}} className='cabin__nav-button' style={{backgroundImage: `url(${arrowUp})`}}></div>
+                                                <div onClick={() => {prevCabin()}} className='cabin__nav-button cabin__cab-nav-button cabin__cab-nav-button--prev' style={{backgroundImage: `url(${arrowUp})`}}></div>
                                             </span>
+                                            <div onClick={() => {nextCabin()}} style={{backgroundImage: `url(${cabinIcon})`}} className='cabin__nav-icon'></div>
+                                            <div className='cabin__nav-counter cabin__nav-counter--cab'>{counter}/3</div>
                                             <span>
-                                                <div onClick={() => {nextCabin()}} className='cabin__nav-button' style={{backgroundImage: `url(${arrowDown})`}}></div>
+                                                <div onClick={() => {nextCabin()}} className='cabin__nav-button cabin__cab-nav-button cabin__cab-nav-button--next' style={{backgroundImage: `url(${arrowDown})`}}></div>
                                             </span>
                                         </div>
                                     </ImgCarousel>

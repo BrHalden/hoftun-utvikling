@@ -50,8 +50,16 @@
     &__info-container
         height: 100%
     &__nav-button
-        width: 23px
         height: 23px
+    &__nav-icon
+        height: 25px
+        background-repeat: no-repeat
+        background-position: center
+        margin: 0
+        transition: 0.3s ease-in-out
+        cursor: pointer
+        &:hover
+            opacity: 0.7
     &__nav-button-container
         position: relative
         text-align: center
@@ -63,16 +71,68 @@
     &__cab-nav, &__img-nav
         background-color: rgba(255, 255, 255, 0.7)
         position: absolute
+        text-align: center
     &__cab-nav
         right: 0 
         top: 50%
-        border-radius: 2px 0 0 2px 
+        border-radius: 3px 0 0 3px
+        margin-top: -67.5px
+
     &__img-nav
         bottom: 0
         left: 50%
-        border-radius: 2px 2px 0 0 
+        border-radius: 3px 3px 0 0
+        margin-left: -59px
+    &__cab-nav-button
+        background-position: center
+        background-repeat: no-repeat
+        height: 23px
+        cursor: pointer
+        &--next
+            margin: 15px 0 5px 0
+            background-image: url('../images/icons/arrow-down.svg')
+            transition: 0.3s ease-in-out
+            &:hover
+                opacity: 0.7
+        &--prev
+            margin: 5px 0 15px 0
+            background-image: url('../images/icons/arrow-up.svg')
+            transition: 0.3s ease-in-out
+            &:hover
+                opacity: 0.7
     &__img-nav-button
         display: inline-block
+        margin: 0 10px -5px 10px
+
+    &__nav-counter
+        display: inline-block
+        padding: 4px 10px 4px 10px
+        border-radius: 2px 2px 0 0
+        width: 40px
+        font-size: 16px
+        &--cab
+            margin: 0 
+            padding: 0
+        &--img
+            // something
+
+    &__img-nav-button
+        display: inline-block
+        background-position: center
+        background-repeat: no-repeat
+        width: 23px
+        height: 23px
+        cursor: pointer
+        &--next
+            background-image: url('../images/icons/arrow-right.svg')
+            transition: 0.3s ease-in-out
+            &:hover
+                opacity: 0.7
+        &--prev
+            background-image: url('../images/icons/arrow-left.svg')
+            transition: 0.3s ease-in-out
+            &:hover
+                opacity: 0.7
     &__row
         max-width: 100%
     &__col

@@ -15,13 +15,17 @@ export const contactPage = {
     },
     contactHero: 'https://i.imgur.com/PDKsuEY.jpg'
 }
-export const pageTransition = {
+export const pageVariants = {
+    initial: {
+        y: '100vh'
+    },
     in: {
-        opacity: 1,
         y: 0
     },
     out: {
-        opacity: 0,
-        y: '100vh'
+        y: '-100vh'
     }
+}
+export const pageTransition = {
+    duration: 0.5
 }

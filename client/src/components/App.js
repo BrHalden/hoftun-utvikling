@@ -12,8 +12,8 @@ export default function App (props) {
   const location = useLocation();
   console.log(location)
   return (
-      <div>
-          <AnimatePresence exitBeforeEnter>
+      <div className='app'>
+          <AnimatePresence>
               <Switch location={location} key={location.pathname}>
                   <Route path='/' exact component={Home} />
                   <Route path='/Cabins' component={Cabins} />
