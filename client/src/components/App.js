@@ -10,7 +10,6 @@ import Admin from './admin/Admin';
 
 export default function App (props) {
   const location = useLocation();
-  console.log(location)
   return (
       <div className='app'>
           <AnimatePresence>

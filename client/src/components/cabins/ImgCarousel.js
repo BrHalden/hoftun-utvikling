@@ -38,7 +38,6 @@ export default function ImgCarousel (props) {
                     </span>
                 </div>
             </div>
-            {console.log(cabinImg)}
         </Col>
     )
 }

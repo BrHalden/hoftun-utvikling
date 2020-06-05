@@ -9,14 +9,6 @@ import cabinIcon from  '../../images/icons/cabin-icon-blue.svg';
 
 
 export default function ListCabins (props) {
-    $(document).bind('keydown', function(event) {
-        if (event.which === 38) {
-            prevCabin()
-            console.log(currentCabin + ' from switchCabin, from: ' + event.key)
-        } else if (event.which === 40) {
-            nextCabin()
-        }
-    });
     let counter = 0;
     let cabinList = [];
     const [currentCabin, setCurrentCabin] = useState(0);
@@ -37,7 +29,6 @@ export default function ListCabins (props) {
         } else {
             $('.cabin__container--current').next().addClass('cabin__container--current').removeClass('cabin__container--hidden').prev().removeClass('cabin__container--current').addClass('cabin__container--hidden');
             setCurrentCabin(currentCabin + 1)
-            console.log(currentCabin);
         }
     }
     function prevCabin () {
@@ -56,7 +47,6 @@ export default function ListCabins (props) {
                 cabins.map(cabin => {
                     counter++;
                     cabinList.push(cabin);
-                    console.log(cabinList);
                     cabin.images= [cabin.img1, cabin.img2, cabin.img3];
                     const {
                         name, description, id, 
@@ -128,7 +118,6 @@ export default function ListCabins (props) {
                         
                 })
             }
-            {console.log(currentCabin)}
         </div>
     )
 }
