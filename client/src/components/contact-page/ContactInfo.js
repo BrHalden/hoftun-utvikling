@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
