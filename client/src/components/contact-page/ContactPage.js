@@ -13,7 +13,7 @@ export default function ContactPage (props) {
     return (
         <motion.div initial='initial' animate='in' exit='out' variants={pageVariants} transition={pageTransition} className='contact-page animation__container'>
             <Nav />
-            <ContactHero image={contactPage.contactHero} />
+            <ContactHero/>
             <Container>
                 <Row>
                     <ContactInfo name={name} mail={mail} image={image} phone={phone} />

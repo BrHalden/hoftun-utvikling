@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from '../Button'
-import Img from '../../images/org-size/hjem_head1.jpg';
+import Img from '../../images/hjem_head1.jpg';
 import homeBanner from '../../images/home-banner.svg';
 import { pageVariants, pageTransition } from '../../constants/constants';
 
