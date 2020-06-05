@@ -24,7 +24,7 @@ export default function ContactFrom (props) {
             body: JSON.stringify(mail)
         };
         console.log(mail);
-        fetch('/mail', options)
+        fetch('/api/mail', options)
             .then(response => response.json())
             .then(res => {
             console.log(res);
