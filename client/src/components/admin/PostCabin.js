@@ -57,7 +57,7 @@ export default function PostCabin (props) {
                         </Form.Group>
                         <Form.Group className='add-cabin__item'>
                             <Form.Control as='textarea' rows='3' name='description' type='text' placeholder='Hytte beskrivelse' ref={register({ required: true })}/>
-                            {errors.description && <p className="add-cabin-error">Hytten trenger en beskrivlse, eventuelt en innledning eller infotekst</p>}
+                            {errors.description && <p className="add-cabin__error">Hytten trenger en beskrivlse, eventuelt en innledning eller infotekst</p>}
                         </Form.Group>
                         <Col lg='6' md='6' sm='12' className='add-cabin__number-input add-cabin__number-input--prices'>
                             <p>Priser: </p>

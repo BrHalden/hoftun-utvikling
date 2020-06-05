@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from "react-bootstrap/Form";
@@ -62,7 +62,7 @@ export default function ContactFrom (props) {
                 </Form.Group>
                 <Form.Group className='contact-form__item'>
                     <Form.Control size='sm' rows='3' as='textarea' name='text' type='text' placeholder='Melding *' className='contact-form__input' ref={register({ required: true })}/>
-                    {errors.message && <p className="contact-form__error">Meldingen må være minst 10 tegn lang</p>}
+                    {errors.text && <p className="contact-form__error">Meldingen må være minst 10 tegn lang</p>}
                 </Form.Group>
                 <Form.Group className='contact-form__item contact-form__item--submit'>
                     <p className="contact-form__hidden contact-form__accepted">Meldingen ble sendt</p>

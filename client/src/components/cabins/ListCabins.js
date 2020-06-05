@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
 import $ from 'jquery';
 
 import ImgCarousel from './ImgCarousel';
 import DisplayInfo from './DisplayInfo';
 
-import arrowDown from '../../images/icons/arrow-down.svg';
-import arrowUp from '../../images/icons/arrow-up.svg';
 import cabinIcon from  '../../images/icons/cabin-icon-blue.svg';
 
 
 export default function ListCabins (props) {
-    var fired = false;
     $(document).bind('keydown', function(event) {
         if (event.which === 38) {
             prevCabin()
@@ -54,9 +50,6 @@ export default function ListCabins (props) {
             setCurrentCabin(currentCabin - 1)
         }
     }
-    function switchCabin (event) {
-        
-    }
     return (
         <div className='cabin'>
             {
@@ -76,7 +69,7 @@ export default function ListCabins (props) {
                     if (cabinList.length === 1) {
                         return (
                             <div key={id} id={'cabin' + counter} className='cabin__container cabin__container--current'>
-                                <Row className='cabin__row'>
+                                <Row className='cabin__row' style={{marginLeft: 0}}>
                                     <ImgCarousel images={images} className='cabin__image-container'>
                                         <div className='cabin__cab-nav cabin__nav-button-container cabin__nav-button-container--cabin'>
                                             <span>
@@ -95,7 +88,7 @@ export default function ListCabins (props) {
                                         totalPrice={totalPrice} askingPrice={askingPrice} expenses={expenses}
                                         primaryRoomArea={primaryRoomArea} liveableArea={liveableArea} grossArea={grossArea}
                                         aditionalInfo={aditionalInfo}
-                                        img1={img1} img1={img2} img3={img3}
+                                        img1={img1} img2={img2} img3={img3}
                                         createdOn={createdOn}
                                         className='cabin__info-container'
                                     />
@@ -105,16 +98,16 @@ export default function ListCabins (props) {
                     } else {
                         return (
                             <div key={id} id={'cabin' + counter} className='cabin__container cabin__container--hidden'>
-                                <Row className='cabin__row'>
+                                <Row className='cabin__row' style={{marginLeft: 0}}>
                                     <ImgCarousel images={images}>
                                         <div className='cabin__cab-nav'>
                                             <span>
-                                                <div onClick={() => {prevCabin()}} className='cabin__nav-button cabin__cab-nav-button cabin__cab-nav-button--prev' style={{backgroundImage: `url(${arrowUp})`}}></div>
+                                                <div onClick={() => {prevCabin()}} className='cabin__nav-button cabin__cab-nav-button cabin__cab-nav-button--prev'></div>
                                             </span>
                                             <div onClick={() => {nextCabin()}} style={{backgroundImage: `url(${cabinIcon})`}} className='cabin__nav-icon'></div>
                                             <div className='cabin__nav-counter cabin__nav-counter--cab'>{counter}/3</div>
                                             <span>
-                                                <div onClick={() => {nextCabin()}} className='cabin__nav-button cabin__cab-nav-button cabin__cab-nav-button--next' style={{backgroundImage: `url(${arrowDown})`}}></div>
+                                                <div onClick={() => {nextCabin()}} className='cabin__nav-button cabin__cab-nav-button cabin__cab-nav-button--next'></div>
                                             </span>
                                         </div>
                                     </ImgCarousel>
@@ -123,7 +116,7 @@ export default function ListCabins (props) {
                                         totalPrice={totalPrice} askingPrice={askingPrice} expenses={expenses}
                                         primaryRoomArea={primaryRoomArea} liveableArea={liveableArea} grossArea={grossArea}
                                         aditionalInfo={aditionalInfo}
-                                        img1={img1} img1={img2} img3={img3}
+                                        img1={img1} img2={img2} img3={img3}
                                         createdOn={createdOn}
                                         className='cabin__info-container'
                                     />

@@ -1,18 +1,16 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
+import { Container, Row, Col } from 'react-bootstrap';
 import Button from '../Button'
 
 export default function DisplayInfo (props) {
     return (
-        <Col className='info' lg='4' md='4'>
+        <Col className='info' lg='4' md='12' sm='12'>
             <h3 className='info__header'>{props.name}</h3>
             <p className='info__intro'>{props.description}</p>
             <Container>
                 <Row className='info__value-container'>
-                    <Col className='info__value-section' lg='6' md='6'>
+                    <Col className='info__value-section' lg='6' md='5' sm='6'>
                         <p className='info__sub-header'>Prisantydning:</p>
                         <p>{props.askingPrice} kr</p>
                         <p className='info__sub-header'>Omkostninger:</p>
@@ -20,7 +18,7 @@ export default function DisplayInfo (props) {
                         <p className='info__sub-header'>Totalpris:</p>
                         <p>{props.totalPrice} kr</p>
                     </Col>
-                    <Col className='info__value-section' lg='6' md='6'>
+                    <Col className='info__value-section' lg='6' md='5' sm='6'>
                         <p className='info__sub-header'>Primærrom:</p>
                         <p >{props.primaryRoomArea} m<sup>2</sup></p>
                         <p className='info__sub-header'>Bruksareal:</p>

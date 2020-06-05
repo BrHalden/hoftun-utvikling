@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import arrowRight from '../../images/icons/arrow-right.svg';
-import arrowLeft from '../../images/icons/arrow-left.svg';
 
 
 export default function ImgCarousel (props) {
     const [cabinImg, setCabinImg] = useState(0);
-    const [imageIndex, setImageIndex] = useState(0);
     
     function nextImage () {
         if (props.images.length - 1 === cabinImg) {
@@ -27,7 +24,7 @@ export default function ImgCarousel (props) {
     }
         //sett inn imgNav i  return 
     return (
-        <Col lg='8' md='8' className='cabin__col cabin__img-col'>
+        <Col lg='8' md='12' sm='12' className='cabin__col cabin__img-col' style={{paddingLeft: 0}}>
             <Image className='cabin__image' src={props.images[cabinImg]} fluid />
                 {props.children}
                 <div className='cabin__img-nav'>

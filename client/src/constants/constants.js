@@ -17,15 +17,15 @@ export const contactPage = {
 }
 export const pageVariants = {
     initial: {
-        y: '100vh'
+        opacity: 0
     },
     in: {
-        y: 0
+        opacity: 1
     },
     out: {
-        y: '-100vh'
+        opacity: 0
     }
 }
 export const pageTransition = {
-    duration: 0.5
+    duration: 0.1
 }

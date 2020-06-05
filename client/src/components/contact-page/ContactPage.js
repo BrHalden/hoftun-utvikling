@@ -5,9 +5,7 @@ import ContactInfo from './ContactInfo';
 import CantactForm from './ContactForm';
 import ContactHero from './ContactHero';
 import {contactPage} from '../../constants/constants';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row } from 'react-bootstrap';
 import {pageVariants, pageTransition} from '../../constants/constants'
 
 export default function ContactPage (props) {
