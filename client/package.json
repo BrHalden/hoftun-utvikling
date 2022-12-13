@@ -6,7 +6,7 @@
     "bootstrap": "^4.4.1",
     "cra-template": "1.0.3",
     "emailjs-com": "^2.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "framer-motion": "^1.11.0",
     "grunt": "^1.1.0",
     "grunt-babel": "^8.0.0",
